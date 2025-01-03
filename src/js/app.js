@@ -1,1 +1,2 @@
-console.log('Hello Web');
+
+import { Dropdown } from "bootstrap";
