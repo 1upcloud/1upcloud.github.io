@@ -57,14 +57,5 @@ Here's a basic overview of the project structure:
 ```
 ---
 
-## Contributing
-
-Feel free to fork and contribute to the project. You can submit pull requests or open issues if you have any suggestions or find bugs.
-
----
-
-## License
-
-This project is licensed under the BSD 2-Clause License.
 
 ---
