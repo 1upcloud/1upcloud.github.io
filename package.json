@@ -1,12 +1,12 @@
 {
-  "name": "techatpark-web",
+  "name": "1upcloud-web",
   "version": "1.0.0",
-  "description": "Techatpark Web Portal",
+  "description": "1upcloud Web Portal",
   "author": "Sathish Kumar Thiyagarajan",
   "license": "GPL-3.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/techatpark/website.git"
+    "url": "https://github.com/1upcloud/website.git"
   },
   "keywords": [
     "npm",
@@ -17,9 +17,9 @@
     "compress"
   ],
   "bugs": {
-    "url": "https://github.com/techatpark/npm_scripts_static-ref/issues"
+    "url": "https://github.com/1upcloud/npm_scripts_static-ref/issues"
   },
-  "homepage": "https://github.com/techatpark/npm_scripts_static-ref#readme",
+  "homepage": "https://github.com/1upcloud/npm_scripts_static-ref#readme",
   "devDependencies": {
     "bootstrap": "5.3.3",
     "copy-files-from-to": "^3.2.2",
@@ -37,6 +37,7 @@
     "serve": "webpack serve",
     "build:hugo": "hugo -d ../dist -s site",
     "build:sass": "sass src/scss:dist/css",
+    "build:js": "webpack",
     "build": "run-s clean build:*",
     "watch:hugo": "onchange \"site\" -- run-s build:hugo",
     "watch:sass": "onchange \"src/scss\" -- run-s build:sass",
