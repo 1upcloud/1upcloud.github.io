@@ -1,28 +1,48 @@
 {
-  "name": "static-web-ref",
+  "name": "techatpark-web",
   "version": "1.0.0",
-  "description": "Static Website",
+  "description": "Techatpark Web Portal",
   "author": "Sathish Kumar Thiyagarajan",
-  "license": "ISC",
-  "source": "src/index.html",
-  "scripts": {
-    "watch:src": "parcel",
-    "watch:site": "onchange \"site\" -- run-s build:site",
-    "start": "npm run build && run-p watch:site watch:src",
-    "build:src": "parcel build --public-url ./",
-    "build:site": "hugo --minify -d ../src -s site -v",
-    "build": "npm run build:site && npm run build:src",
-    "create": "hugo new site",
-    "serve": "hugo server"
+  "license": "GPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/techatpark/website.git"
   },
+  "keywords": [
+    "npm",
+    "scripts",
+    "npm scripts",
+    "watch",
+    "minify",
+    "compress"
+  ],
+  "bugs": {
+    "url": "https://github.com/techatpark/npm_scripts_static-ref/issues"
+  },
+  "homepage": "https://github.com/techatpark/npm_scripts_static-ref#readme",
   "devDependencies": {
-    "@parcel/plugin": "^2.12.0",
-    "@parcel/transformer-sass": "^2.12.0",
-    "@parcel/transformer-webmanifest": "^2.12.0",
-    "hugo-bin": "^0.133.1",
+    
+    "bootstrap": "5.3.3",
+    "browser-sync": "^3.0.3",
+    "copy-files-from-to": "^3.2.2",
+    "hugo-bin": "^0.137.2",
     "npm-run-all": "4.1.5",
-    "onchange": "^7.1.0",
-    "parcel": "^2.12.0",
-    "bootstrap": "^5.3.3"
-  }
+    "onchange": "7.1.0",
+    "rimraf": "6.0.1",
+    "sass": "1.83.1"
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "serve": "browser-sync start --config browser-sync.js",
+    "build:hugo": "hugo -d ../dist -s site",
+    "build:sass": "sass src/scss:dist/css",
+    "build": "run-s clean build:*",
+    "watch:hugo": "onchange \"site\" -- run-s build:hugo",
+    "watch:sass": "onchange \"src/scss\" -- run-s build:sass",
+    "start": "npm run build && run-p serve watch:*",
+    "postinstall": "npm run build"
+  },
+  "browserslist": [
+    "defaults"
+  ]
 }
