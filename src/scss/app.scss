@@ -1,3 +1,44 @@
-// Required
+@import './base/typography';
+@import './themes/theme.scss';
 @import '../../node_modules/bootstrap/scss/bootstrap.scss';
 
+
+body {
+    line-height: 1.8rem;
+  }
+
+/* Fixed/sticky icon bar (vertically aligned 50% from the top of the screen) */
+.icon-bar {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+  }
+  .icon-bar li:hover{
+    padding: 0.5 2rem;
+    background-color: #566FB5 !important;
+    height: 60px;
+    width: 60px;
+    a i{
+      font-size: 2rem;
+    }
+  }
+  .home-award {
+    justify-content: center;
+  }
+  .home-award img{
+    width: auto;
+    position: relative;
+    bottom: -78px;
+  }
+.home-banner{
+  background-image: url('/images/banner_bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+  footer{
+    background-image: url('/images/Container.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #fff !important;
+  }
