@@ -17,11 +17,7 @@ body {
   .icon-bar li:hover{
     padding: 0.5 2rem;
     background-color: #566FB5 !important;
-    height: 60px;
-    width: 60px;
-    a i{
-      font-size: 2rem;
-    }
+    transition: background-color 1s ease-in-out;
   }
   .home-award {
     justify-content: center;
@@ -41,4 +37,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #fff !important;
+  }
+  .about, .contact, .post-height{
+    min-height: calc(100vh - (100px + 240px));
   }
