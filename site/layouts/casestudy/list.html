@@ -1,7 +1,8 @@
 {{ define "main" }}
 
 
-<main class="pt-3">
+<main class="row justify-content-center">
+    <div class="col-lg-9">
     <ul class="list-unstyled">
     <!-- Ranges through content/posts/*.md -->
     {{ range .Pages }}
@@ -13,5 +14,7 @@
         </li>
     {{ end }}
     </ul>
+</div>
+
 </main>
 {{ end }}
