@@ -1,0 +1,35 @@
+{{ define "main" }}
+<main class="pt-3">
+
+    <small>This Is Why</small>
+    <h2 class="pb-2 border-bottom">You Should Join Us</h2>
+
+    <div class="row row-cols-lg-3">
+    <!-- Ranges through content/posts/*.md -->
+    {{ range .Pages }}
+        <div class="card col mx-2">
+            <div class="card-header">
+            <h5 class="text-body-emphasis"><a class="text-link" href="{{strings.TrimRight "/" .Permalink}}">{{.Title}}</a></h5>
+            <small><i class="fa-solid fa-location-dot pe-2"></i>{{ .Params.location }}</small>
+            </div>
+    
+            <div class="card-body">
+            <p>{{ .Summary }}</p>
+            </div>
+    
+            <div class="card-footer">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                    {{ range .Params.tags }}
+                    <span class="badge text-bg-info ms-1">{{ . }}&nbsp;&nbsp;&nbsp;</span>
+                    {{ end }}
+                
+                </div>
+                <button class="btn btn-primary">Apply</small>
+            </div>
+            </div>
+        </div>
+    {{ end }}
+    </div>
+</main>
+{{ end }}
