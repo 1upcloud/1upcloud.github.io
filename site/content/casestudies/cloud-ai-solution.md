@@ -1,5 +1,5 @@
 ---
-title: "Revolutionizing E-Commerce Scalability with Cloud Migration"
+title: "Revolutionizing E-Commerce Scalability with Cloud AI"
 weight: 1
 ---
 
