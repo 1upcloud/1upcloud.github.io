@@ -1,6 +1,7 @@
 ---
 title: "NOC Services"
 weight: 5
+icon: "fa-solid fa-check"
 authors:
   - sathishk
 ---

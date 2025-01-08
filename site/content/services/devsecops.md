@@ -1,6 +1,7 @@
 ---
 title: "DevSecOps"
 weight: 3
+icon: "fa-solid fa-lock"
 authors:
   - sathishk
 ---

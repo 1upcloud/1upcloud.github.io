@@ -18,125 +18,39 @@
     </div>
   </div>
 
-  <div class="container-fluid p-5">
-    <div class="row home-service">
-        <div class="col-sm-4">
-            <div class="card card-flip h-100">
-                <div class="card-front text-white">
-                  <img src="../images/mobileapp_dev.avif" class="card-img" alt="...">
-                    <div class="card-body card-img-overlay text-center align-items-center">
-                        <i class="fa fa-search fa-3x float-right"></i>
-                        <h3 class="card-title">Corporate Training</h3>
-                        <p class="card-text">Boost your workforce with hands-on training in Cloud Services, DevSecOps, SRE, and NOC.</p>
-                    </div>
-                </div>
-                <div class="card-back bg-dark text-center align-items-center text-white">
-                    <div class="card-body">
-                        
-                        <p class="card-text">Let 1UpCloud Technologies drive your digital transformation and help your business achieve greatness.</p>
-                        <a href="#" class="btn btn-outline-secondary">Action</a>
-                    </div>
-                </div>
-            </div>
+  <div class="container-fluid">
+    <small>Our Sevices</small>
+    <h2 class="pb-2 border-bottom">What We do?</h2>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+
+      {{ range (where .Site.Pages "Section" "services") }}
+      {{ range .Pages }}
+      <a href="{{ .Permalink }}" class="text-decoration-none">
+      <div class="feature col text-dark">
+        <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
+          <i aria-hidden="true" class="{{ .Params.Icon }}"></i>
         </div>
-        <div class="col-sm-4">
-            <div class="card card-flip h-100">
-                <div class="card-front text-white">
-                  <img src="../images/machinelearning.jpg" class="card-img" alt="...">
-                  <div class="card-body card-img-overlay text-center align-items-center">
-                        <i class="fa fa-search-plus fa-3x float-right"></i>
-                        <h3 class="card-title">Turbocharged Development</h3>
-                        <p class="card-text">Accelerate your development process with automated code generation, reducing manual effort and boosting productivity. </p>
-                    </div>
-                </div>
-                <div class="row card-back bg-dark text-center align-items-center text-white">
-                    <div class="card-body ">
-                        
-                        <p class="card-text">SQLComponents lets you build applications faster and smarter.</p>
-                        <a href="#" class="btn btn-outline-secondary">Action</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="card card-flip h-100">
-                <div class="card-front text-white ">
-                  <img src="../images/CyberSecurity.png" class="card-img" alt="...">
-                  <div class="card-body card-img-overlay text-center align-items-center">
-                        <i class="fa fa-arrow-circle-right fa-3x float-right"></i>
-                        <h3 class="card-title">Type Safety</h3>
-                        <p class="card-text">Ensure robust code with compile-time checks, catching issues before they reach runtime.</p>
-                    </div>
-                </div>
-                <div class="card-back bg-dark text-center align-items-center text-white">
-                    <div class="card-body">
-                        
-                        <p class="card-text">SQLComponents guarantees safer, more reliable SQL development.</p>
-                        <a href="#" class="btn btn-outline-secondary">Action</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4 my-3">
-            <div class="card card-flip h-100">
-                <div class="card-front text-white">
-                  <img src="../images/crmerp.jpg" class="card-img" alt="...">
-                  <div class="card-body card-img-overlay text-center align-items-center">
-                        <i class="fa-solid fa-gears fa-3x float-right"></i>
-                        <h3 class="card-title">Simply SQL</h3>
-                        <p class="card-text">Unleash the full power of SQL without traditional ORM limitations.</p>
-                    </div>
-                </div>
-                <div class="card-back bg-dark text-center align-items-center text-white">
-                    <div class="card-body">
-                       
-                        <p class="card-text">With SQLComponents, all you need to work with SQL is just SQL.</p>
-                        <a href="#" class="btn btn-outline-secondary">Action</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4 my-3">
-            <div class="card card-flip h-100">
-                <div class="card-front text-white">
-                  <img src="../images/Cloud_Computing.png" class="card-img" alt="...">
-                  <div class="card-body card-img-overlay text-center align-items-center">
-                        <i class="fa-solid fa-microchip fa-3x float-right"></i>
-                        <h3 class="card-title">Future-Proof</h3>
-                        <p class="card-text">WCode once, upgrade anytime. SQLComponents evolves with the latest versions of Java and databases automatically—no more manual upgrades.</p>
-                    </div>
-                </div>
-                <div class="card-back bg-dark text-center align-items-center text-white">
-                    <div class="card-body">
-                        
-                        <p class="card-text">Keep your applications modern without rewriting code.</p>
-                        <a href="#" class="btn btn-outline-secondary">Action</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4 my-3">
-          <div class="card card-flip h-100">
-              <div class="card-front text-white">
-                <img src="../images/ai.jpeg" class="card-img" alt="...">
-                <div class="card-body card-img-overlay text-center align-items-center">
-                      <i class="fa-solid fa-shield-halved fa-3x float-right"></i>
-                      <h3 class="card-title">Cybersecurity is the practice </h3>
-                      <p class="card-text">Cybersecurity safeguards systems from unauthorized access, data breaches, and cyber threats </p>
-                  </div>
-              </div>
-              <div class="card-back bg-dark text-center align-items-center text-white">
-                  <div class="card-body">
-                      
-                      <p class="card-text">implementing robust measures such as firewalls, encryption, and intrusion detection systems.</p>
-                      <a href="#" class="btn btn-outline-secondary">Action</a>
-                  </div>
-              </div>
-          </div>
-      </div>
+        <h3 class="fs-2 text-body-emphasis">{{ .Title }}</h3>
+        <p>{{ .Summary }}</p>
         
+      </div>
+    </a>
+      {{ end }}
+      {{ end }}
+
+
+
+
+
+  
+  
+  
+      
+  
     </div>
-</div>
+  
+  
+  </div>
 
 
   <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 bg-secondary px-5 py-5">

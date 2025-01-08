@@ -1,6 +1,7 @@
 ---
 title: "Site Reliability Engineering"
 weight: 4
+icon: "fas fa-cloud"
 authors:
   - sathishk
 ---

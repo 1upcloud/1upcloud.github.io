@@ -1,6 +1,7 @@
 ---
 title: "Corporate Training"
 weight: 1
+icon: "fas fa-chalkboard-teacher"
 authors:
   - sathishk
 ---
