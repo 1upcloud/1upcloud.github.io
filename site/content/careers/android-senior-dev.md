@@ -2,6 +2,7 @@
 title: "Software Engineer (Android)"
 weight: 1
 location: "London"
+jobUrl: "https://www.linkedin.com/jobs/view/4109194257" 
 tags:
     - Parttime
 ---

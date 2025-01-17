@@ -2,6 +2,7 @@
 title: "Software Engineer (Java)"
 weight: 2
 location: "India"
+jobUrl: "https://www.linkedin.com/jobs/view/4127542772"
 tags:
     - Fulltime
     - Urgent
