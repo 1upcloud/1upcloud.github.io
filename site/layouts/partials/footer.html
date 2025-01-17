@@ -112,17 +112,19 @@
 </footer>
 <div class="icon-bar">
 	<ul class="list-group">
+		{{ range .Site.Params.social }}
 		<li class="list-group-item bg-primary">
-			<a class="text-light" href=""><i class="fa-brands fa-x-twitter"></i></a>
+			<a class="text-light" href="{{ .url }}"><i class="fa-brands {{ .name }}"></i></a>
 		</li>
-		<li class="list-group-item bg-primary">
+		<!-- <li class="list-group-item bg-primary">
 			<a class="text-light" href=""><i class="fa-brands fa-facebook"></i></a>
-		</li>
-		<li class="list-group-item bg-primary">
+		</li> -->
+		{{ end }}
+		<!-- <li class="list-group-item bg-primary">
 			<a class="text-light" href=""><i class="fa-brands fa-instagram"></i></a>
 		</li>
 		<li class="list-group-item bg-primary">
 			<a class="text-light" href=""><i class="fa-brands fa-linkedin"></i></a>
-		</li>
+		</li> -->
 	</ul>
 </div>
