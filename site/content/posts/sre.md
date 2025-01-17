@@ -1,5 +1,5 @@
 ---
-title: "3. SRE: The Key to Operational Excellence"
+title: "SRE: The Key to Operational Excellence"
 weight: 3
 authors:
   - john.smith

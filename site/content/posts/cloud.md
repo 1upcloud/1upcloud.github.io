@@ -1,5 +1,5 @@
 ---
-title: "4. Cloud Services: Transforming Business Landscapes"
+title: "Cloud Services: Transforming Business Landscapes"
 weight: 4
 authors:
   - alice.wong

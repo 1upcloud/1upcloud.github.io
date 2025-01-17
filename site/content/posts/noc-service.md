@@ -1,5 +1,5 @@
 ---
-title: "5. The Role of NOC in Modern IT Operations"
+title: "The Role of NOC in Modern IT Operations"
 weight: 5
 authors:
   - david.lee

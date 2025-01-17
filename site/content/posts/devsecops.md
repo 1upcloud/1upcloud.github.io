@@ -1,5 +1,5 @@
 ---
-title: "2. The Future of DevSecOps"
+title: "The Future of DevSecOps"
 weight: 2
 authors:
   - jane.doe

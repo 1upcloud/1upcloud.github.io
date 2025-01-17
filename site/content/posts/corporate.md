@@ -1,5 +1,5 @@
 ---
-title: "6. Corporate Training: Building a Skilled Workforce"
+title: "Corporate Training: Building a Skilled Workforce"
 weight: 6
 authors:
   - sophia.tan
