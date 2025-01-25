@@ -156,3 +156,17 @@ flip card
   @keyframes m{
     100% {transform:translateY(-300%)}
   }
+  .industries-card {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    .industries-card__image {
+      height: 230px;
+      img {
+        object-fit: contain;
+        height: 250px;
+      }
+    }
+    .card-title {
+      color: #030419;
+      font-weight: 600;
+    }
+  }
