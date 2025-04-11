@@ -117,45 +117,6 @@ flip card
   @media (max-width: 767.98px) { .home-award img{width: 100%;} }
 
 
-  .type {
-    display:inline-block;
-    vertical-align: bottom;
-  }
-  
-  .type > span {
-    display:grid;
-    overflow: hidden;
-    height:1.2em;
-  }
-  
-  .type span span {
-    width:0%;
-    max-width:max-content;
-    overflow: hidden;
-    height:inherit;
-    word-break:break-all;
-    animation:
-      c 0.5s infinite steps(1),  
-      t 2s linear infinite alternate,
-      m 12s steps(3) infinite;
-  }
-  .type span span:before {
-    content:" ";
-    display:inline-block;
-  }
-  
-  @keyframes t{
-    90%,100% {width:100%}
-  }
-  
-  @keyframes c{
-    0%,100%{box-shadow:5px 0 0 #0000}
-    50%    {box-shadow:5px 0 0 red  }
-  }
-  
-  @keyframes m{
-    100% {transform:translateY(-300%)}
-  }
   .industries-card {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     .industries-card__image {
@@ -169,4 +130,15 @@ flip card
       color: #030419;
       font-weight: 600;
     }
+  }
+
+
+  .full-div {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to bottom, #050541 0%, #353570 100%); 
+    color: white;
   }

@@ -1,71 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ $.Site.Language.Lang }}">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ $.Site.Title }}</title>
 
 
-    <!--Fav Icon-->
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/images/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/images/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/images/favicon-16x16.png"
-    />
-    <link rel="manifest" href="/images/site.webmanifest" />
+  {{ block "head" . }}{{ partial "head" . }}{{end}}
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="/css/app.css" rel="stylesheet">
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
+  {{ if templates.Exists ( printf "partials/head-%s.html" .Type ) }}
+  {{ $partialPath := printf "head-%s" .Type }}
+  {{ partial $partialPath . }}
+  {{ end }}
+
+
 </head>
 
 <body>
+  
+  {{ if and (not .IsHome) (ne .Type "presentations") }}
+  {{ block "header" . }}{{ partial "header" . }}{{end}}
+  {{ end }}
 
-    {{ block "header" . }}{{ partial "header" . }}{{end}}
-
-    {{ if .IsHome }}
-    <div class="container-fluid">
-      <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2  bg-body-tertiary home-banner">
-        <div class="col d-flex flex-column justify-content-center">
-          <h1 class="display-5 fw-bold text-dark">Elevate Your Business with <span
-              class="type display-6"><span><span>Microservices</span><span>Devops</span><span>Cloud Native
-                  Apps</span><span>JAM Stack</span><span>Low Code/No Code</span></span></span></h1>
-          <p class="fs-4 fw-notmel text-start animate__animated animate__rubberBand"><small>Transform your software
-              operations and scale new heights with our tailored services. Let us manage your Cloud and DevOps needs, so you
-              can focus on driving innovation</small></p>
-        </div>
-        <div class="col">
-          <img class="img-fluid animate__animated animate__bounce" src="/images/homepage.png" alt="award" width="auto">
-        </div>
-      </div>
+  <main class="container w-100 h-100">
+    <div class="row w-100 h-100" id="main-container">
+      {{ block "main" . }}{{end}}
     </div>
-    {{ end }}
-
-    <div class="post-height px-5 py-3">
-      {{ block "main" .}}{{end}} 
-    </div>
-
-    {{ block "footer" . }}{{ partial "footer" . }}{{end}}
-
-    <script type="module" src="/js/app.js"></script>
-
     
+  </main>
+  {{ block "footer" . }}{{ partial "footer" . }}{{end}}
+
+
+  {{ if .IsHome }}
+    
+    {{ else }}
+      <!-- /.container -->
+  {{ block "scripts" . }}{{ partial "scripts" . }}{{end}}
+
+  {{ if templates.Exists ( printf "partials/scripts-%s.html" .Type ) }}
+  {{ $partialPath := printf "scripts-%s" .Type }}
+  {{ partial $partialPath . }}
+  {{ end }}
+    {{ end }}
+  
 </body>
 
 </html>

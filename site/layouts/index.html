@@ -1,210 +1,59 @@
 {{ define "main" }}
 
-
-
-<div class="container-fluid gx-4">
-
-
-
-  <div class="container-fluid">
-    <small>What We do?</small>
-    <h2 class="pb-2 border-bottom">Our Sevices</h2>
-    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
-
-      {{ range (where .Site.Pages "Section" "services") }}
-      {{ range .Pages }}
-      <a href="{{ .Permalink }}" class="text-decoration-none">
-      <div class="feature col text-dark animate__animated animate__tada">
-        <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
-          <i aria-hidden="true" class="{{ .Params.Icon }}"></i>
-        </div>
-        <h3 class="fs-2 text-body-emphasis">{{ .Title }}</h3>
-        <p>{{ .Summary }}</p>
-        
-      </div>
-    </a>
-      {{ end }}
-      {{ end }}  
+<div class="container-fluid full-div">
+ 
+    <!-- Top-right social icons -->
+    <div class="position-absolute top-0 end-0 p-3 ">
+      <a href="https://twitter.com/yourhandle" target="_blank" class="me-3">
+        <i class="fab fa-twitter fa-lg text-white"></i>
+      </a>
+      <a href="https://linkedin.com/company/yourcompany" target="_blank" class="me-3">
+        <i class="fab fa-linkedin fa-lg text-white"></i>
+      </a>
+      <a href="https://github.com/yourrepo" target="_blank">
+        <i class="fab fa-github fa-lg text-white"></i>
+      </a>
     </div>
   
+    <!-- Centered main content -->
+    <main class="d-flex align-items-center justify-content-center vh-100 text-center">
+      <div>
+        <img class="img-fluid mb-4" src="/images/logo_full.svg" alt="Logo">
+        <h2 class="mb-4">Innovating Your Business<br>Guarding Your Success</h2>
   
-  </div>
+        <div class="btn-group mb-4" role="group">
+          <a href="/technology" class="btn btn-lg btn-secondary fw-bold me-2">Technology</a>
+          <a href="/services" class="btn btn-lg btn-primary fw-bold ms-2">Services</a>
+        </div>
   
-  
-  <div class="row bg-secondary">
-    <small>Case Studies</small>
-    <h2 class="pb-2 border-bottom">What We did?</h2>
-
-
-    <div class="row mb-2">
-
-      {{ range (where .Site.Pages "Section" "casestudies") }}
-      {{ range first 3 .Pages }}
-
-      <div class="col-md-4">
-        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-          <div class="col p-4 d-flex flex-column position-static">
-            <strong class="d-inline-block mb-2 text-primary-emphasis">World</strong>
-            <h3 class="mb-0">{{ .Title }}</h3>
-            <div class="mb-1 text-body-secondary">Nov 12</div>
-            <p class="card-text mb-auto">{{ .Content | strings.Truncate 100 }}</p>
-            <a href="{{ .Permalink }}" class="icon-link gap-1 icon-link-hover stretched-link">
-              Continue reading
-              <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
-            </a>
-          </div>
-          
+        <div class="d-flex flex-wrap align-items-center justify-content-center gap-4 mt-4">
+          <span class="d-flex flex-column align-items-center animate-img">
+            <img class="mb-2" src="/images/ai.svg" alt="" width="72" height="72">
+            <span >Artificial Intelligence</span>
+          </span>
+          <span class="d-flex flex-column align-items-center animate-img">
+            <img class="mb-2" src="/images/micro-services.svg" alt="" width="72" height="72">
+            <span >Micro Services</span>
+          </span>
+          <span class="d-flex flex-column align-items-center animate-img">
+            <img class="mb-2" src="/images/devops.svg" alt="" width="72" height="72">
+            <span >DevOps</span>
+          </span>
+          <span class="d-flex flex-column align-items-center animate-img">
+            <img class="mb-2" src="/images/cloud-native.svg" alt="" width="72" height="72">
+            <span >Cloud Native Apps</span>
+          </span>
+          <span class="d-flex flex-column align-items-center animate-img">
+            <img class="mb-2" src="/images/sre.svg" alt="" width="72" height="72">
+            <span >Site Reliability Engineering</span>
+          </span>
         </div>
       </div>
+    </main>
 
-      {{ end }}
-      {{ end }}  
-      
-    </div>
+  
 
-  </div>
-
-  <div class="row">
-    <small>Our Blog</small>
-    <h2 class="pb-2 border-bottom">How We did?</h2>
-
-
-    <div class="row mb-2">
-
-      {{ range (where .Site.Pages "Section" "posts") }}
-      {{ range first 3 .Pages }}
-
-      <div class="col-md-4">
-        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-          <div class="col p-4 d-flex flex-column position-static">
-            <strong class="d-inline-block mb-2 text-primary-emphasis">World</strong>
-            <h3 class="mb-0">{{ .Title }}</h3>
-            <div class="mb-1 text-body-secondary">Nov 12</div>
-            <p class="card-text mb-auto">{{ .Content | strings.Truncate 100 }}</p>
-            <a href="{{ .Permalink }}" class="icon-link gap-1 icon-link-hover stretched-link">
-              Continue reading
-              <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
-            </a>
-          </div>
-          
-        </div>
-      </div>
-
-      {{ end }}
-      {{ end }}  
-      
-    </div>
-
-  </div>
-
-  <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 px-5 py-5">
-    <div class="col py-5 ">
-      <h6 class="text-dark">Testimonials</h6>
-      <h2 class="pb-2 text-dark">Don’t believe me? People talk</h2>
-      <p class="text-dark"><small>We pride ourselves in the work we do but it’s always nice to hear from our clients.
-          Here are just some of the “Thank Yous” we’ve had.</small></p>
-    </div>
-    <div class="col py-5 bg-secondary">
-      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators mb-0">
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-            aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-            aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-            aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner bg-secondary">
-          <div class="carousel-item active  bg-secondary">
-            <div class="card text-center px-4">
-
-              <div class="user-image">
-
-                <img src="" class="rounded-circle" width="80">
-
-              </div>
-
-              <div class="user-content bg-secondary">
-
-                <h5 class="mb-0">CEO</h5>
-                <span>Rits Soft Private Limited</span>
-                <p class="small">“From the very first dealing with 1upCloud, the
-                  impression has been one of an extremely efficient and knowledgeable company. I wouldn’t hesitate to
-                  use them again for a similar project and would highly recommend them to other companies looking for
-                  someone to embark upon the
-                  Cloud journey, DevOps, SRE, AWS and Digital transformations.”
-
-                </p>
-
-              </div>
-
-              <div class="ratings">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-
-              </div>
-
-            </div>
-          </div>
-          <div class="carousel-item bg-secondary">
-            <div class="card text-center px-4">
-              <div class="user-image">
-                <img src="" class="rounded-circle" width="80">
-              </div>
-              <div class="user-content bg-secondary">
-                <h5 class="mb-0">CTO</h5>
-                <span>TechWave Innovations</span>
-                <p class="small">“Collaborating with 1upCloud has been a game changer for our team. Their expertise in Cloud solutions and AWS has streamlined our processes and significantly improved our deployment times. We look forward to working with them on future projects.”</p>
-              </div>
-              <div class="ratings">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-              </div>
-            </div>
-          </div>
-          
-          <div class="carousel-item bg-secondary">
-            <div class="card text-center px-4">
-              <div class="user-image">
-                <img src="" class="rounded-circle" width="80">
-              </div>
-              <div class="user-content bg-secondary">
-                <h5 class="mb-0">Head of Operations</h5>
-                <span>CloudNext Solutions</span>
-                <p class="small">“The 1upCloud team delivered exceptional results, helping us navigate complex DevOps challenges with ease. Their approach to SRE and Digital Transformations has been nothing short of outstanding. Highly recommended for organizations seeking reliable Cloud partners.”</p>
-              </div>
-              <div class="ratings">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-              </div>
-            </div>
-          </div>
-          
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-          data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-          data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-
-    </div>
-
-  </div>
 </div>
-
 
 
 {{ end }}
