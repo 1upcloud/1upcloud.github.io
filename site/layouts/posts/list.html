@@ -1,6 +1,6 @@
 {{ define "main" }}
 
-<h2 class="pb-2 border-bottom">Blog</h2>
+
     
         <ul class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 list-unstyled">
 
@@ -11,9 +11,11 @@
 
 
                 <div class="card shadow-sm" style="min-height: 500px;max-height: 500px;">
-                    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+                    <img src="{{ .Params.thumbnail }}" style="min-height: 200px;max-height: 200px;"/>
                     <div class="card-body">
-                        <h3 class="title mb-1"><a class="text-link" href="{{strings.TrimRight " /" .Permalink}}">{{.Title}}</a></h3>
+                        <h3 class="title mb-1">
+                            <a class="text-link" href="{{strings.TrimRight " /" .Permalink}}">{{.Title}}</a>
+                        </h3>
 
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">

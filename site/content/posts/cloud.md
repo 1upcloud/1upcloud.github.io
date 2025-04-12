@@ -1,6 +1,7 @@
 ---
 title: "Cloud Services: Transforming Business Landscapes"
 weight: 4
+thumbnail: "/images/services/cloud.svg"
 authors:
   - alice.wong
 ---

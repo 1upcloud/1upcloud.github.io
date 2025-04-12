@@ -1,6 +1,7 @@
 ---
 title: "SRE: The Key to Operational Excellence"
 weight: 3
+thumbnail: "/images/services/cloud.svg"
 authors:
   - john.smith
 ---

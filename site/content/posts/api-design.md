@@ -1,6 +1,7 @@
 ---
 title: "API Design: The Art of Programming"
 weight: 1
+thumbnail: "/images/services/cloud.svg"
 authors:
   - sathishk
 ---

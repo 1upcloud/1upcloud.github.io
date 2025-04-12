@@ -1,6 +1,7 @@
 ---
 title: "The Role of NOC in Modern IT Operations"
 weight: 5
+thumbnail: "/images/services/cloud.svg"
 authors:
   - david.lee
 ---

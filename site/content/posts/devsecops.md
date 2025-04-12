@@ -1,6 +1,7 @@
 ---
 title: "The Future of DevSecOps"
 weight: 2
+thumbnail: "/images/services/cloud.svg"
 authors:
   - jane.doe
 ---

@@ -1,6 +1,7 @@
 ---
 title: "Corporate Training: Building a Skilled Workforce"
 weight: 6
+thumbnail: "/images/services/cloud.svg"
 authors:
   - sophia.tan
 ---
