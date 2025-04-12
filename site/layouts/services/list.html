@@ -1,31 +1,32 @@
 {{ define "main" }}
 
 <main class="row justify-content-center">
-    <div class="col-lg-9">
+    
         <ul class="list-unstyled">
             <!-- Ranges through content/posts/*.md -->
-            {{ range .Pages }}
-            <li>
-                <h3 class="title mb-1"><a class="text-link" href="{{strings.TrimRight " /" .Permalink}}">{{.Title}}</a>
-                </h3>
-                <div class="meta mb-1"><span class="date px-2">Published 2 months ago</span>
-                    <span class="stretched-link position-relative reading-time text-nowrap"
-                        title="Estimated reading time"><svg xmlns="http://www.w3.org/2000/svg"
-                            class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24"
-                            stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round"
-                            stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                            <path d="M3 12a9 9 0 1018 0A9 9 0 003 12"></path>
-                            <path d="M12 7v5l3 3"></path>
-                        </svg>
-                        <span class="px-2">5&nbsp;minutes</span>
-                </div>
-                <div class="intro">{{ .Summary }}</div>
-                <a class="text-link" href="{{strings.TrimRight " /" .Permalink}}">Read more →</a>
+            {{ range $index, $page := .Pages }}
+            <li class="row g-0 rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+              {{ if modBool $index 2 }}    
+              <div class="col p-4 d-flex flex-column position-static">
+                <h3 class="mb-0">{{.Title}}</h3>
+                <p class="card-text mb-auto">{{ .Summary }}</p>
+              </div>
+              <div class="col-auto d-none d-lg-block">
+                <img src="{{ .Params.thumbnail }}"/>
+              </div>
+              {{ else }}
+              <div class="col-auto d-none d-lg-block">
+                <img src="{{ .Params.thumbnail }}"/>
+              </div>
+              <div class="col p-4 d-flex flex-column position-static">
+                <h3 class="mb-0">{{.Title}}</h3>
+                <p class="card-text mb-auto">{{ .Summary }}</p>
+              </div>
+              
+              {{ end }}
             </li>
             {{ end }}
         </ul>
-    </div>
 
 </main>
 {{ end }}

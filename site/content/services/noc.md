@@ -1,7 +1,7 @@
 ---
 title: "NOC Services"
 weight: 5
-icon: "fa-solid fa-check"
+thumbnail: "/images/services/corp-training.svg"
 authors:
   - sathishk
 ---

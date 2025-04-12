@@ -1,7 +1,7 @@
 ---
 title: "Cloud Services"
 weight: 2
-icon: "fas fa-cloud"
+thumbnail: "/images/services/cloud.svg"
 authors:
   - sathishk
 ---

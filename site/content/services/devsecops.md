@@ -1,7 +1,7 @@
 ---
 title: "DevSecOps"
 weight: 3
-icon: "fa-solid fa-lock"
+thumbnail: "/images/services/corp-training.svg"
 authors:
   - sathishk
 ---
