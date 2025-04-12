@@ -1,32 +1,43 @@
 {{ define "main" }}
 
 <h2 class="pb-2 border-bottom">Blog</h2>
-<main class="row justify-content-center">
-    <div class="col-lg-9">
-        <ul class="list-unstyled">
+    
+        <ul class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 list-unstyled">
+
+
             <!-- Ranges through content/posts/*.md -->
             {{ range .Pages }}
-            <li class="py-3">
-                <h3 class="title mb-1"><a class="text-link" href="{{strings.TrimRight " /" .Permalink}}">{{.Title}}</a>
-                </h3>
-                <div class="meta mb-1"><span class="date px-2">Published 2 months ago</span>
-                    <span class="stretched-link position-relative reading-time text-nowrap"
-                        title="Estimated reading time"><svg xmlns="http://www.w3.org/2000/svg"
-                            class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24"
-                            stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round"
-                            stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                            <path d="M3 12a9 9 0 1018 0A9 9 0 003 12"></path>
-                            <path d="M12 7v5l3 3"></path>
-                        </svg>
-                        <span class="px-2">5&nbsp;minutes</span>
-                </div>
-                <div class="intro">{{ .Summary }}</div>
-                <a class="text-link" href="{{strings.TrimRight " /" .Permalink}}">Read more →</a>
+            <li class="col">
+
+
+                <div class="card shadow-sm" style="min-height: 500px;max-height: 500px;">
+                    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+                    <div class="card-body">
+                        <h3 class="title mb-1"><a class="text-link" href="{{strings.TrimRight " /" .Permalink}}">{{.Title}}</a></h3>
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                5&nbsp;minutes
+                            </div>
+                            <small class="text-body-secondary">Published 2 months ago</small>
+                          </div>
+
+                      <p class="card-text">{{ .Summary | plainify | truncate 120 }}</p>
+                      
+                      
+                    </div>
+                    <div class="card-footer bg-info">
+                        <a class="text-link" href="{{strings.TrimRight " /" .Permalink}}">Read more →</a>
+                    </div>
+                  </div>
+
+
+                
+                
+           
             </li>
             {{ end }}
         </ul>
-    </div>
+    
 
-</main>
 {{ end }}
