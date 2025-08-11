@@ -19,7 +19,7 @@ As a Product Designer, you will work within a Product Delivery Team fused with U
 6. Ensure design choices are data led by identifying assumptions to test each sprint, and work with the analysts in your team to plan moderated usability test sessions.
 7. Design pixel perfect responsive UI’s and understand that adopting common interface patterns is better for UX than reinventing the wheel
 8. Present your work to the wider business at Show & Tell sessions.
-
+9. Be an innovator, technology evangelist and great speaker.
 #### Skill & Experience
 
 - You have at least 3 years’ experience working as a Product Designer.
