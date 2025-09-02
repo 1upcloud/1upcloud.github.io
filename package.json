@@ -13,7 +13,10 @@
     "build:js": "webpack",
     "build:sass": "sass src/scss:dist/css",
     "build:site": "hugo --minify -d ../dist -s site",
-    "build": "run-s build:*"
+    "build": "run-s build:*",
+    "prebuild": "node convert-png-to-svg.js",
+    "convert-png": "node convert-png-to-svg.js",
+    "start": "run-p convert-png watch:* serve"
   },
   "devDependencies": {
     "webpack": "5.99.9",
