@@ -1,20 +1,31 @@
 {{ define "main" }}
-<h2 class="pb-2 border-bottom">Case Studies</h2>
+<main class="pt-3">
+  <h2 class="pb-2 border-bottom text-center animate__animated animate__fadeInDown">
+    Case Studies
+  </h2>
 
-<main class="row justify-content-center">
+  <div class="row justify-content-center">
     <div class="col-lg-9">
-    <ul class="list-unstyled">
-    <!-- Ranges through content/posts/*.md -->
-    {{ range .Pages }}
-        <li class="py-3">
-            <h3 class="title mb-1"><a class="text-link" href="{{strings.TrimRight "/" .Permalink}}">{{.Title}}</a></h3>
-                    
-                    <div class="intro">{{ .Summary }}</div>
-                    <a class="text-link" href="{{strings.TrimRight "/" .Permalink}}">Read more →</a>
-        </li>
-    {{ end }}
-    </ul>
-</div>
+      <ul class="list-unstyled">
+        <!-- Ranges through content/posts/*.md -->
+        {{ range .Pages }}
+        <li class="py-4 mb-3 border-bottom animate__animated animate__fadeInUp">
+          <h3 class="title mb-2">
+            <a class="text-link" href="{{ strings.TrimRight "/" .Permalink }}">
+              {{ .Title }}
+            </a>
+          </h3>
 
+          <p class="intro mb-2">{{ .Summary }}</p>
+
+          <a class="text-link fw-semibold"
+            href="{{ strings.TrimRight "/" .Permalink }}">
+            Read more →
+          </a>
+        </li>
+        {{ end }}
+      </ul>
+    </div>
+  </div>
 </main>
 {{ end }}
