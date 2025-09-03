@@ -1,32 +1,33 @@
 {{ define "main" }}
 
 <main class="row justify-content-center">
-    
-        <ul class="list-unstyled">
-            <!-- Ranges through content/posts/*.md -->
-            {{ range $index, $page := .Pages }}
-            <li class="row g-0 rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-              {{ if modBool $index 2 }}    
-              <div class="col p-4 d-flex flex-column position-static">
-                <h3 class="mb-0">{{.Title}}</h3>
-                <p class="card-text mb-auto">{{ .Summary }}</p>
-              </div>
-              <div class="col-auto d-none d-lg-block">
-                <img src="{{ .Params.thumbnail }}"/>
-              </div>
-              {{ else }}
-              <div class="col-auto d-none d-lg-block">
-                <img src="{{ .Params.thumbnail }}"/>
-              </div>
-              <div class="col p-4 d-flex flex-column position-static">
-                <h3 class="mb-0">{{.Title}}</h3>
-                <p class="card-text mb-auto">{{ .Summary }}</p>
-              </div>
-              
-              {{ end }}
-            </li>
-            {{ end }}
-        </ul>
+    <ul class="list-unstyled">
+        <!-- Ranges through content/posts/*.md -->
+        {{ range $index, $page := .Pages }}
+        <li class="row g-0 rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative
+          animate__animated
+          {{ if modBool $index 2 }}animate__fadeInLeft{{ else }}animate__fadeInRight{{ end }}
+          animate__slow">
+          {{ if modBool $index 2 }}
 
+          <div class="col p-4 d-flex flex-column position-static">
+            <h3 class="mb-0">{{.Title}}</h3>
+            <p class="card-text mb-auto">{{ .Summary }}</p>
+          </div>
+          <div class="col-auto d-none d-lg-block">
+            <img src="{{ .Params.thumbnail }}"/>
+          </div>
+          {{ else }}
+          <div class="col-auto d-none d-lg-block">
+            <img src="{{ .Params.thumbnail }}"/>
+          </div>
+          <div class="col p-4 d-flex flex-column position-static">
+            <h3 class="mb-0">{{.Title}}</h3>
+            <p class="card-text mb-auto">{{ .Summary }}</p>
+          </div>
+          {{ end }}
+        </li>
+        {{ end }}
+    </ul>
 </main>
 {{ end }}
